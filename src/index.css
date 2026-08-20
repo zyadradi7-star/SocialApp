@@ -1,0 +1,12 @@
+@import "tailwindcss";
+@import "@heroui/styles";
+
+body {
+  background-color: #eee;
+}
+
+.active {
+  color: red;
+
+  font-weight: 900;
+}
