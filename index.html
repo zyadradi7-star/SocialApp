@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/SocialApp/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SocialApp</title>
+    <script type="module" crossorigin src="/SocialApp/assets/index-KjTB4UdO.js"></script>
+    <link rel="stylesheet" crossorigin href="/SocialApp/assets/index-DbPtIAyZ.css">
+  </head>
+  <body>
+    <div id="root"></div>
+
+  </body>
+</html>
+
+<!-- <div className=" bg-gray-300 min-h-screen p-3 ">
+        <div className=" w-1/2 bg-white rounded-md mx-auto p-5 shadow">
+          <h2 className=" text-sky-600 font-bold text-center text-2xl">
+            Register Now
+          </h2>
+          {/* // ^ form */}
+          <form onSubmit={handleSubmit(submitForm)}>
+            <div className=" flex flex-col gap-7 mt-5">
+              {/* //^name */}
+              <div>
+                <Input
+                  {...register("name", {
+                    required: { value: true, message: "Name is Required" },
+                    minLength: { value: 4, message: "Min 4 Letter" },
+                    maxLength: { value: 8, message: "Max 8 Letter" },
+                  })}
+                  aria-label="Name"
+                  className="w-full "
+                  placeholder="Enter your name"
+                />
+
+                {formState.errors.name && formState.touchedFields.name ? (
+                  <p className=" bg-gray-200 text-red-400 p-2 rounded-md text-center text-xl">
+                    {formState.errors.name?.message}
+                  </p>
+                ) : null}
+              </div>
+              {/* //^ email */}
+              <div>
+                <Input
+                  {...register("email", {
+                    required: { value: true, message: "Email is Required" },
+                    pattern: {
+                      value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                      message: "Enter your Email",
+                    },
+                  })}
+                  aria-label="Email"
+                  className="w-full "
+                  placeholder="Enter your Email"
+                />
+                {formState.errors.email && formState.touchedFields.email ? (
+                  <p className=" bg-gray-200 text-red-400 p-2 rounded-md text-center text-xl">
+                    {formState.errors.email?.message}
+                  </p>
+                ) : null}
+              </div>
+              {/* // ^password */}
+              <div>
+                <Input
+                  {...register("password", {
+                    required: { value: true, message: "Password is Required" },
+                    pattern: {
+                      value: /^[A-Z][a-z0-9]{5,8}$/,
+                      message: "inValid Password",
+                    },
+                  })}
+                  type="password"
+                  aria-label="Password"
+                  className="w-full "
+                  placeholder="Enter your Password"
+                />
+                {formState.errors.password &&
+                formState.touchedFields.password ? (
+                  <p className=" bg-gray-200 text-red-400 p-2 rounded-md text-center text-xl">
+                    {formState.errors.password?.message}
+                  </p>
+                ) : null}
+              </div>
+              {/* // ^ repassword */}
+              <div>
+                <Input
+                  {...register("rePassword", {
+                    required: { value: true, message: "Password is Required" },
+                  })}
+                  type="password"
+                  aria-label="rePassword"
+                  className="w-full "
+                  placeholder="Enter your rePassword"
+                />
+                {formState.errors.rePassword &&
+                formState.touchedFields.rePassword ? (
+                  <p className=" bg-gray-200 text-red-400 p-2 rounded-md text-center text-xl">
+                    {formState.errors.rePassword?.message}
+                  </p>
+                ) : null}
+              </div>
+              <div className="flex gap-4">
+                {/* //^ dateofBirth */}
+                <div className="w-full">
+                  <Input
+                    {...register("dateOfBirth", {
+                      valueAsDate: true,
+                      required: {
+                        value: true,
+                        message: "dateofBirth is Required",
+                      },
+                      validate: function (dateVal) {
+                        let current = new Date().getFullYear(); // 2026
+                        let year = dateVal.getFullYear(); // choosing year
+                        let age = current - year;
+
+                        if (age > 18) {
+                          return true;
+                        } else {
+                          return "Age Less Than 18 ";
+                        }
+                      },
+                    })}
+                    type="date"
+                    aria-label="dateOfBirth"
+                    className="w-full "
+                    placeholder="Enter your dateOfBirth"
+                  />
+                  {formState.errors.dateOfBirth &&
+                  formState.touchedFields.dateOfBirth ? (
+                    <p className=" bg-gray-200 text-red-400 p-2 rounded-md text-center text-xl">
+                      {formState.errors.dateOfBirth?.message}
+                    </p>
+                  ) : null}
+                </div>
+                {/* // ^ gender */}
+                <div className="w-full">
+                  <select
+                    {...register("gender", {
+                      required: { value: true, message: "Gender is Required" },
+                    })}
+                    defaultValue={"Choose a Gender"}
+                    className="block w-full px-3 py-2.5 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand shadow-xs placeholder:text-body"
+                  >
+                    <option value="">Choose a Gender </option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                  </select>
+                  {formState.errors.gender && formState.touchedFields.gender ? (
+                    <p className=" bg-gray-200 text-red-400 p-2 rounded-md text-center text-xl">
+                      {formState.errors.gender?.message}
+                    </p>
+                  ) : null}
+                </div>
+              </div>
+              <Button type="submit" className="w-full my-3">
+                Submit
+              </Button>
+            </div>
+          </form>
+        </div>
+      </div> -->
