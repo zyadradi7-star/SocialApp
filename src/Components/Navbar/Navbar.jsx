@@ -177,7 +177,9 @@ export default function Navbar() {
                   <div className="flex items-center gap-2 bg-white/10 px-3 py-1.5 rounded-xl border border-white/10">
                     <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
                     <span className="font-medium text-white/90">
-                      {userData?.name ? `Welcome, ${userData.name}` : "Welcome"}
+                      {userData?.name
+                        ? `Welcome, ${userData?.name}`
+                        : "Welcome"}
                     </span>
                   </div>
 

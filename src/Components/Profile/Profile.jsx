@@ -344,7 +344,7 @@ export default function Profile() {
         <div className="mt-8 space-y-6">
           {posts && posts.length > 0 ? (
             posts.map((post) => (
-              <PostCard key={post._id || post.id} post={post} />
+              <PostCard key={post?._id || post?.id} post={post} />
             ))
           ) : (
             <div className="text-center py-10 text-gray-400">
