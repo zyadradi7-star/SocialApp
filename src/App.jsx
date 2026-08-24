@@ -18,12 +18,18 @@ import ProtectRoute from "./Components/ProtectRoute/ProtectRoute";
 import ProtectAuth from "./Components/ProtectAuth/ProtectAuth";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import PostDetails from "./Components/postDetails/postDetails";
+
 import ChangePassword from "./Components/ChangePassword/ChangePassword";
 import { ToastContainer, toast } from "react-toastify";
+import { useNetworkState } from "react-use";
+import Product from "./Components/Product/Product";
+import PostDetails from "./Components/PostDetails/PostDetails";
 
 const queryClient = new QueryClient();
+
 function App() {
+  const { online } = useNetworkState();
+
   let route = createBrowserRouter([
     {
       path: "",
@@ -77,6 +83,14 @@ function App() {
             </ProtectRoute>
           ),
         },
+        {
+          path: "product",
+          element: (
+            <ProtectRoute>
+              <Product />
+            </ProtectRoute>
+          ),
+        },
         { path: "navbar", element: <Navbar /> },
         { path: "footer", element: <Footer /> },
         { path: "*", element: <NotFound /> },
@@ -86,6 +100,11 @@ function App() {
 
   return (
     <>
+      {!online && (
+        <div className="bg-gray-300 flex justify-center items-center fixed inset-0 text-2xl font-bold z-50 h-screen">
+          Network Issus ................!!!
+        </div>
+      )}
       <QueryClientProvider client={queryClient}>
         <AuthContextProvider>
           <CounterContextProvider>

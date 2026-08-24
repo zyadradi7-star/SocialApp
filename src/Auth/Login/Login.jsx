@@ -31,9 +31,9 @@ export default function Login() {
       .then((response) => {
         console.log(response);
         console.log(response.data);
-        if (response.data.message === "signed in successfully") {
-          setUserToken(response.data.data.token);
-          localStorage.setItem("token", response.data.data.token);
+        if (response?.data.message === "signed in successfully") {
+          setUserToken(response?.data.data.token);
+          localStorage.setItem("token", response?.data.data.token);
           // ^navigate user to login page
 
           navigate("home");
@@ -41,7 +41,7 @@ export default function Login() {
       })
       .catch((error) => {
         console.log(error.response);
-        setApiError(error.response.data.message);
+        setApiError(error?.response.data.message);
       })
       .finally(() => setIsLoading(false));
   }

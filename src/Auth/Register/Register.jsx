@@ -36,10 +36,10 @@ export default function Register() {
       .post("https://route-posts.routemisr.com/users/signup", userData)
       .then((response) => {
         console.log(response);
-        console.log(response.data.data.token);
-        if (response.data.message === "account created") {
-          setUserToken(response.data.data.token);
-          localStorage.setItem("tokens", response.data.data.token);
+        console.log(response?.data.data.token);
+        if (response?.data.message === "account created") {
+          setUserToken(response?.data.data.token);
+          localStorage.setItem("tokens", response?.data.data.token);
           // ^navigate user to login page
 
           navigate("/");
@@ -47,7 +47,7 @@ export default function Register() {
       })
       .catch((error) => {
         console.log(error.response.data.message);
-        setApiError(error.response.data.message);
+        setApiError(error?.response.data.message);
       })
       .finally(() => setIsLoading(false));
   }
@@ -70,9 +70,9 @@ export default function Register() {
                   placeholder="Enter your name"
                 />
 
-                {formState.errors.name && formState.touchedFields.name ? (
+                {formState?.errors?.name && formState.touchedFields.name ? (
                   <p className=" bg-sky-200 p-2 text-center text-red-500 font-bold rounded-md">
-                    {formState.errors.name?.message}
+                    {formState?.errors?.name?.message}
                   </p>
                 ) : null}
 
@@ -87,10 +87,10 @@ export default function Register() {
                   placeholder="Enter your userName"
                 />
 
-                {formState.errors.username &&
-                formState.touchedFields.username ? (
+                {formState?.errors.username &&
+                formState?.touchedFields.username ? (
                   <p className=" bg-sky-200 p-2 text-center text-red-500 font-bold rounded-md">
-                    {formState.errors.username?.message}
+                    {formState?.errors.username?.message}
                   </p>
                 ) : null}
 
@@ -105,9 +105,9 @@ export default function Register() {
                   className="w-full "
                   placeholder="Enter your Email"
                 />
-                {formState.errors.email && formState.touchedFields.email ? (
+                {formState?.errors?.email && formState.touchedFields.email ? (
                   <p className=" bg-sky-200 p-2 text-center text-red-500 font-bold rounded-md">
-                    {formState.errors.email?.message}
+                    {formState?.errors?.email?.message}
                   </p>
                 ) : null}
               </div>
@@ -120,8 +120,8 @@ export default function Register() {
                   className="w-full"
                   placeholder="Enter your Password"
                 />
-                {formState.errors.password &&
-                formState.touchedFields.password ? (
+                {formState?.errors?.password &&
+                formState?.touchedFields.password ? (
                   <p className=" bg-sky-200 p-2 text-center text-red-500 font-bold rounded-md">
                     {formState.errors.password?.message}
                   </p>

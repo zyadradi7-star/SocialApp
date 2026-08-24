@@ -8,7 +8,7 @@ import PostCard from "../PostCard/PostCard";
 import RingLoader from "./../../../node_modules/react-spinners/esm/RingLoader";
 import { useQuery } from "@tanstack/react-query";
 import CreatePostCard from "../CreatePostCard/CreatePostCard";
-
+import { Helmet } from "react-helmet-async";
 export default function Home() {
   // const [allPosts, setAllPosts] = useState(null);
   // const [error, setError] = useState(null);
@@ -56,7 +56,6 @@ export default function Home() {
   // const posts = data?.data.data.posts;
 
   console.log(data);
-
   // const { data, isLoading, isError, error, isFetching, isFetched, refetch } =
   //   useQuery({
   //     queryKey: ["getPosts"],
@@ -103,6 +102,10 @@ export default function Home() {
   }
   return (
     <>
+      <h2>asdsadds</h2>
+      <Helmet>
+        <title>Home</title>
+      </Helmet>
       {/* <button
         onClick={refetch}
         className=" bg-sky-400 text-white py-2 px-3 rounded-2xl ms-10 cursor-pointer"
@@ -122,7 +125,7 @@ export default function Home() {
       <CreatePostCard />
 
       {data?.map((post) => {
-        return <PostCard key={post._id} post={post} isSinglePost={false} />;
+        return <PostCard key={post?._id} post={post} isSinglePost={false} />;
       })}
     </>
   );
